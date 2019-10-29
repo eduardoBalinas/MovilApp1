@@ -3,21 +3,18 @@ const { promisify } = require('util');
 
 const pool = mysql.createPool({
 
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
-    password: 'superman1',
-    database: 'MovilApp'
+    password: 'root',
+    port: '3306',
+    database: 'prueba'
 
 });
 
 pool.getConnection((err) => {
-    if (err) {
-        console.log('Fallo la conexion a la base de datos');
+    if (err) throw err;
+    console.log('En linea');
 
-    }else{
-        console.log('Conexion Establecida');
-
-    }
 });
 
 pool.query = promisify(pool.query);
