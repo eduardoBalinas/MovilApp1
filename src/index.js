@@ -10,7 +10,13 @@ app.use(bodyParser.urlencoded({extends: false}));
 app.use(bodyParser.json());
 //Manda el tipo de peticion que se hace de la pagina
 app.use(morgan('dev'));
+
+//Conexion a las peticiones
+
+app.use(require('./Routes/routes'));
+
 //conexion a la base de datos
+/*
 mongoose.connect('mongodb://localhost:27017/MovilApp', {useNewUrlParser: true , useUnifiedTopology: true} , (err) => {
     if(err) {
         console.log('Fallo la conexion');
@@ -20,6 +26,7 @@ mongoose.connect('mongodb://localhost:27017/MovilApp', {useNewUrlParser: true , 
 
     }
 });
+*/
 
 //Es el puerto en el que esta corriendo la aplicacion
 app.listen(3000 , ( ) => {

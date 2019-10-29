@@ -1,3 +1,7 @@
+
+//Posible conexio a la base de datos ocuapndo SQL
+
+/*
 const mysql = require('mysql');
 const { promisify } = require('util');
 
@@ -20,3 +24,5 @@ pool.getConnection((err) => {
 pool.query = promisify(pool.query);
 
 module.exports = pool;
+
+*/
